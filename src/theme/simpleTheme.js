@@ -1,10 +1,11 @@
-
 export const simpleTheme = {
+  name: 'simpleTheme',
+  dark: false,
   colors: {
     // Colores principales
     primary: '#001274ff',      // Azul principal
     secondary: '#5b0b69ff',    // Púrpura
-    success: '#1cdf23ff',      // Verde
+    success: '#01bb07ff',      // Verde
     error: '#ff1100ff',        // Rojo
     warning: '#ff9900ff',      // Naranja
     info: '#1596ffff',         // Azul claro
@@ -15,10 +16,18 @@ export const simpleTheme = {
     
     // Colores de fondo
     background: '#f8f9fa',
-    surface: '#ffffff'
+    surface: '#ffffff',
+    
+    // Colores para texto (opcionales pero recomendados)
+    'on-primary': '#ffffff',
+    'on-secondary': '#ffffff',
+    'on-success': '#ffffff',
+    'on-error': '#ffffff',
+    'on-warning': '#000000',
+    'on-info': '#ffffff'
   },
   
-  // Tamaños de fuente
+  // Tamaños de fuente (para referencia, no se aplican automáticamente)
   fontSizes: {
     small: '0.875rem',
     normal: '1rem',
@@ -26,14 +35,14 @@ export const simpleTheme = {
     xlarge: '1.5rem'
   },
   
-  // Espaciado
+  // Espaciado (para referencia)
   spacing: {
     small: '8px',
     medium: '16px',
     large: '24px'
   },
   
-  // Bordes redondeados
+  // Bordes redondeados (para referencia)
   borderRadius: {
     small: '4px',
     medium: '8px',
