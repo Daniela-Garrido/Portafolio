@@ -34,7 +34,7 @@
 
 ---
 
-## 🛠 Stack Tecnológico & Cumplimiento de Rúbrica
+## 🛠 Stack Tecnológico
 
 ### Frontend Framework & Arquitectura
 | Tecnología | Implementación | Cumplimiento Rúbrica |
