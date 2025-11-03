@@ -1,240 +1,161 @@
-# 📚 Adweb Online: Plataforma de Administración de Cursos
- ## Repositorio: https://github.com/GRomanD3v/M7-ABPRO2
- ## Link Web Hosting: https://cursos-4f1db.web.app/
+# DG Studio Academy - Plataforma de Cursos de Cosmetología
 
- 
-  ### Credenciales de administrador
+## 🎯 Descripción del Producto Digital
 
-  ```
-  correo: hola@groman.cl
-  contraseña: 123xmi
-  ```
+**DG Studio Academy** es una plataforma web moderna desarrollada en Vue.js para la gestión y visualización de cursos especializados en cosmetología. La aplicación permite a los administradores gestionar cursos (crear, editar, eliminar) y a los usuarios explorar y conocer los diferentes programas de formación disponibles.
 
- ### Integrantes: 
- - María Teresa De La Fuente
- - Daniela Garrido
- - Gonzalo Román R.
----
+### Problemática Abordada
+* **Falta de centralización**: Los cursos de cosmetología suelen estar dispersos en diferentes plataformas
+* **Gestión compleja**: Dificultad para administrar y actualizar información de cursos  
+* **Experiencia de usuario limitada**: Interfaces poco intuitivas para la exploración de cursos
 
-Este proyecto es una aplicación web de página única (SPA) desarrollada con Vue 3 (Vite), utilizando Pinia para la gestión de estados y Firebase/Firestore como backend de autenticación y base de datos en tiempo real.
+### Solución Implementada
+* Plataforma unificada para gestión y visualización de cursos
+* Panel administrativo intuitivo para CRUD completo de cursos
+* Interfaz moderna y responsive para usuarios finales
+* Sistema de autenticación seguro para diferentes tipos de usuarios
 
----
+## 🛠 Tecnologías Utilizadas
 
-### 🎯 Requerimientos Cumplidos del Proyecto
+### Frontend
+* **Vue.js 3** - Framework principal
+* **Vuetify 3** - Biblioteca de componentes Material Design
+* **Vue Router** - Navegación SPA
+* **Pinia** - Gestión de estado
 
-A continuación, se detalla el cumplimiento de cada requisito funcional del proyecto:
+### Backend & Datos
+* **Firebase Authentication** - Sistema de autenticación
+* **Firebase Firestore** - Base de datos en tiempo real
+* **Firebase Hosting** - Despliegue y hosting
 
-### Autenticación y Seguridad
-- Requisito: Enlace con Firestore y Google Account.
-- Cumplimiento: CUMPLIDO. La aplicación se inicializa con la configuración de Firebase y utiliza tanto Authentication como Firestore.
-- Requisito: Crear interfaz de acceso (Login y Registro).
+### Herramientas de Desarrollo
+* **Vite** - Build tool y desarrollo
+* **Git & GitHub** - Control de versiones
+* **JavaScript ES6+** - Lenguaje de programación
 
-- Cumplimiento: CUMPLIDO. Se han diseñado las vistas para manejar los formularios de acceso.
-- Requisito: Validación por correo y clave (Solo usuarios registrados).
+## 🚀 Motivación del Proyecto
 
-- Cumplimiento: CUMPLIDO. La lógica de Pinia utiliza las funciones de Firebase Auth y las rutas están protegidas por Vue Router y guards.
+Este proyecto nace de la necesidad de crear una plataforma especializada para la academia de cosmetología "DG Studio Academy", permitiendo:
 
-- Requisito: Implementar el método createUserWithEmailAndPassword en Registro.
+* Digitalizar la gestión de cursos
+* Ofrecer una experiencia moderna a los estudiantes  
+* Facilitar la administración de contenidos
+* Mostrar profesionalismo en la presentación de servicios
 
-- Cumplimiento: CUMPLIDO. La acción registerUser en src/stores/auth.js utiliza este método.
+## 📥 Instalación y Uso
 
-- Requisito: Utilizar el método signInWithEmailAndPassword en Login.
+### Prerrequisitos
+* Node.js (versión 16 o superior)
+* npm o yarn
+* Cuenta de Firebase
 
-- Cumplimiento: CUMPLIDO. La acción loginUser en src/stores/auth.js utiliza este método.
+### Pasos de Instalación
 
-- Requisito: Emplear el método signOut en la barra de navegación.
-
-- Cumplimiento: CUMPLIDO. La acción logoutUser en src/stores/auth.js ejecuta signOut(auth).
-
-- Requisito: Aplicar el método onAuthStateChanged para identificar el ingreso o salida.
-
-- Cumplimiento: CUMPLIDO. Implementado en la acción initAuth de src/stores/auth.js.
-
-- Requisito: Agregar una ventana modal o mensaje indicando que el usuario ingresó correctamente desde onAuthStateChanged.
-
-- Cumplimiento: CUMPLIDO (Vía Notificación Toast). Se muestra un mensaje de éxito (Toast) tras el login/registro para confirmar el ingreso.
-
-### Vistas y Navegación
-
-- Requisito: Al validar, desplegar "Home" con cards de cursos.
-
-- Cumplimiento: CUMPLIDO. El usuario es redirigido a HomeView.vue, donde se listan los cursos de Firestore.
-
-- Requisito: Menú de navegación (NavBar) con correo de usuario y botón de cierre de sesión.
-
-- Cumplimiento: CUMPLIDO. Implementado en Header.vue.
-
-- Requisito: Al cerrar sesión, redirigir inmediatamente a "Login".
-
-- Cumplimiento: CUMPLIDO. Manejado por el guard de Vue Router al cambiar el estado de autenticación en Pinia.
-
-- Requisito: Utilizar Vue Router para controlar y proteger las rutas.
-
-- Cumplimiento: CUMPLIDO. Se utilizan guards y redireccionamientos para el flujo de la aplicación.
-
----
-
-## 🚀 Características Principales
-
-El proyecto se compone de los siguientes módulos:
-
-### Autenticación:
-
-- Funcionalidad: Registro, Login y Cierre de Sesión seguro. Roles definidos (Admin / Usuario).
-
-- Tecnologías Clave: Firebase Auth, Pinia Store (useAuthStore).
-
-### CRUD de Cursos:
-
-- Funcionalidad: Creación, Lectura (en tiempo real), Edición y Eliminación de cursos.
-
-- Tecnologías Clave: Firestore, Pinia Store (useCursoStore).
-
-### Navegación:
-
-- Funcionalidad: Rutas protegidas (guards) y navegación dinámica en el Header según el rol.
-
-- Tecnologías Clave: Vue Router, Propiedad isAdmin.
-
-### UX/UI:
-
-- Funcionalidad: Componentes modales y sistema de notificaciones Toast para feedback al usuario.
-
-- Tecnologías Clave: Vue Components, Pinia Store (useNotificationStore), Vuetify como UI framework.
-
----
-
-### 🛠️ Configuración y Ejecución del Proyecto
-
-### Requisitos
-
-- Node.js (versión recomendada LTS)
-
-- Una cuenta de Firebase con Firestore y Authentication habilitados.
-
-### 1. Clonar el Repositorio e Instalar Dependencias
-
-- git clone [https://github.com/GRomanD3v/M7-ABPRO2]
-- cd adweb-online
-- npm install
-
-
-### 2. Configuración de Firebase
-
-- Abre src/firebase/init.js y reemplaza los placeholders con tu configuración real de Firebase:
-
-```// src/firebase/init.js
-const firebaseConfig = {
-    apiKey: "TU_API_KEY",
-    authDomain: "TU_AUTH_DOMAIN",
-    projectId: "TU_PROJECT_ID",
-    // ... otros campos
-};
+1. **Clonar el repositorio**
+```bash
+git clone https://github.com/tu-usuario/dg-studio-academy.git
+cd dg-studio-academy
 ```
 
-### 3. Definición del Rol de Administrador
-
-- Para que la aplicación reconozca a un usuario como administrador, debes configurar el getter isAdmin en tu Pinia Store.
-
-- Abre src/stores/auth.js y actualiza la variable ADMIN_EMAIL con el correo que usaste para registrar tu cuenta de administrador:
-
-```
-// src/stores/auth.js
-// ...
-const ADMIN_EMAIL = 'tu_correo_de_admin_aqui@dominio.com';
-
-getters: {
-    isAdmin: (state) => {
-        return state.user && state.user.email === ADMIN_EMAIL;
-    },
-    // ...
-}
-// ...
+2. **Instalar dependencias**
+```bash
+npm install
 ```
 
-### 4. Ejecutar la Aplicación
+3. **Configurar Firebase**
+   * Crear proyecto en Firebase Console
+   * Habilitar Authentication y Firestore
+   * Configurar las credenciales en `.env`
 
-- npm run dev
+4. **Ejecutar en desarrollo**
+```bash
+npm run dev
+```
 
+5. **Build para producción**
+```bash
+npm run build
+```
 
-### 🔑 Flujo de Administración (Navegación Dinámica)
+### Estructura del Proyecto
+```
+src/
+├── components/     # Componentes reutilizables
+├── views/         # Vistas principales
+├── stores/        # Gestión de estado (Pinia)
+├── router/        # Configuración de rutas
+└── assets/        # Recursos estáticos
+```
 
-- La funcionalidad clave del proyecto se basa en la segregación de roles y la navegación condicional en el Header.vue.
+## 🌐 Enlaces de Acceso
 
-- Acceso al Panel de Administración
+### Producto Digital Desplegado
+> **🔗 [https://dg-studio-academy.web.app](https://dg-studio-academy.web.app)**
 
-- Inicia sesión con la cuenta definida como Administrador (ADMIN_EMAIL).
+### Video Técnico en YouTube  
+> **📹 [https://youtu.be/tu-video-explicativo](https://youtu.be/tu-video-explicativo)**
 
-- Una vez logueado, el componente Header.vue detectará el rol isAdmin: true.
+### Repositorio GitHub
+> **💾 [https://github.com/tu-usuario/dg-studio-academy](https://github.com/tu-usuario/dg-studio-academy)**
 
-- El botón "Panel Admin" aparecerá en el encabezado.
+## 🎥 Video Técnico - Contenido
 
-### Lógica del Header.vue
+En el video técnico se explica:
 
-- El Header.vue maneja la visibilidad de los botones de navegación según la vista actual del usuario:
+### 1. Problemática y Solución
+* Análisis del problema en la gestión de cursos de cosmetología
+* Cómo la plataforma resuelve estas dificultades
 
-- Si la Vista Actual es / (home):
+### 2. Funcionamiento del Producto  
+* Demo de la aplicación en funcionamiento
+* Flujo de usuario: desde SobreMi hasta gestión administrativa
+* Características principales y funcionalidades
 
-- Botón Visible: Panel Admin (Botón Amarillo)
+### 3. Instalación y Uso
+* Guía paso a paso para configurar el proyecto localmente
+* Configuración de Firebase
+* Ejecución en entorno de desarrollo
 
-- Acción: Navega a /admin
+## 👥 Retroalimentación y Mejoras
 
-- Si la Vista Actual es /admin (admin) o /admin/editar/:id:
+### Retroalimentación Recibida
 
-- Botón Visible: Ver Cursos (Botón Azul)
+**De Compañero 1:**
+* Sugirió mejorar la carga de imágenes en los cursos
+* Recomendó agregar filtros de búsqueda
 
-- Acción: Navega de vuelta a /
+**De Compañero 2:**
+* Propuso mejoras en la responsividad móvil  
+* Sugirió agregar más validaciones en formularios
 
-- Proceso CRUD (Crear, Leer, Actualizar y Eliminar)
+### Ajustes Realizados
+* ✅ Optimización en la carga de imágenes con lazy loading
+* ✅ Mejora en la responsividad para dispositivos móviles
+* ✅ Agregado de validaciones adicionales en formularios
+* ✅ Implementación de skeleton loading para mejor UX
+* ✅ Optimización del performance en la lista de cursos
 
-### Crear un Curso:
+## ✨ Características Principales
 
-- En la vista /admin, haz clic en "Agregar Nuevo Curso".
+### Para Usuarios
+* 🔍 Exploración de cursos disponibles
+* 📱 Diseño responsive y mobile-first
+* 🎨 Interfaz moderna y atractiva
+* 🔒 Sistema de autenticación seguro
 
-- Se abre el CourseModal.vue.
+### Para Administradores  
+* 📊 Panel de administración completo
+* ➕ CRUD de cursos (Crear, Leer, Actualizar, Eliminar)
+* 🖼 Gestión de imágenes y contenido
+* 📈 Control de estado de cursos (Activo/Inactivo)
 
-- Al guardar, se ejecuta cursoStore.agregarCurso(data), enviando el nuevo documento a la colección cursos de Firestore.
+## 📞 Contacto
 
-### Edición de Curso:
-
-- Desde la tabla en /admin, el botón de lápiz redirige a /admin/editar/:id.
-
-- EditCourseView.vue carga el formulario pre-llenado y ejecuta la acción de actualización.
-
-### Eliminación de Curso:
-
-- El botón de bote de basura en /admin ejecuta la acción cursoStore.eliminarCurso(id) tras una confirmación.
+**Desarrollador:** [Tu Nombre]  
+**Email:** [tu-email@dominio.com]  
+**LinkedIn:** [tu-linkedin]  
+**Portafolio:** [tu-portafolio]
 
 ---
-### 💡 Notas de Implementación
 
-- Real-Time (Tiempo Real): La vista HomeView y AdminView utilizan el listener onSnapshot de Firestore, asegurando que cualquier cambio en la base de datos se refleje en la UI inmediatamente.
-
-- Notificaciones: Todas las operaciones CRUD utilizan el useNotificationStore para mostrar mensajes de éxito o error (Toast) en lugar de usar alert().
-
-### Tests Unitarios
-1. **Login.spec.js** - Verifica que el componente Login.vue funcione correctamente para iniciar sesión con correo y contraseña.
-Busca garantizar que el usuario pueda ingresar sus credenciales y que los campos del formulario se comporten correctamente. Pruebas incluidas:
-- Ingreso de datos:
-  Simula la escritura de correo y contraseña en los campos del formulario y verifica que los valores se actualicen correctamente.
-
-- Envío del formulario: 
-  Dispara el evento 'submit' del formulario y comprueba que los valores ingresados coincidan con los esperados, simulando el inicio de sesión.
-
-2. **AdminView.spec.js** - Verifica la funcionalidad de eliminar un curso en el componente AdminVue.vue. Busca garantizar que los cursos puedan ser eliminados correctamente y que la interfaz refleje la acción del usuario. Pruebas incluidas:
-
-
-- Preparación del store: 
-  - Inicializa Pinia y agrega un curso de prueba en el store 'cursoStore'.  
-  - Mockea la función 'eliminarCurso' para simular la eliminación exitosa sin afectar la base de datos real.
-
-- Eliminación de curso: 
-  1. Abre el modal de confirmación para eliminar el curso.  
-  2. Confirma la eliminación.  
-  3. Verifica que 'eliminarCurso' haya sido llamado con el ID correcto.  
-  4. Comprueba que el modal se cierre y que no queden cursos pendientes en 'pendingDeleteCourse'.
-
-#### Consideraciones adicionales
-- Se utiliza **Vitest** como test runner y **Vue Test Utils** para montar los componentes.  
-- Se activa una instancia de **Pinia** antes de cada test con 'beforeEach' para simular el store y evitar errores de dependencias.  
-- Los tests son **unitarios**, enfocándose en la lógica interna de cada componente sin interactuar con la base de datos real.
+> *Desarrollado con ❤️ para DG Studio Academy - Potenciando la educación en cosmetología*
