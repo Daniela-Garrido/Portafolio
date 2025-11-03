@@ -1,7 +1,8 @@
 # DG Studio Academy - Plataforma de Gestión de Cursos
 
-## 👤 Integrante: Daniela Garrido olivares
-## 💾 Repositorio: https://github.com/Daniela-Garrido/Portafolio
+## Integrante: Daniela Garrido olivares
+## Repositorio: https://github.com/Daniela-Garrido/Portafolio
+## Puedes ver el proyecto en: https://final-13d2b.web.app/
 
 ---
 
