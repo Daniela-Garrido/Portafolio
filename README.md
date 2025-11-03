@@ -148,14 +148,12 @@ En el video técnico se explica:
 * ➕ CRUD de cursos (Crear, Leer, Actualizar, Eliminar)
 * 🖼 Gestión de imágenes y contenido
 * 📈 Control de estado de cursos (Activo/Inactivo)
+#### Credenciales de administrador
 
-## 📞 Contacto
-
-**Desarrollador:** [Tu Nombre]  
-**Email:** [tu-email@dominio.com]  
-**LinkedIn:** [tu-linkedin]  
-**Portafolio:** [tu-portafolio]
-
+  ```
+  correo: hola@groman.cl
+  contraseña: 123xmi
+  ```
 ---
 
 > *Desarrollado con ❤️ para DG Studio Academy - Potenciando la educación en cosmetología*
