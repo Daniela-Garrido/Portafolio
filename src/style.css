@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&display=swap');
+
+body {
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  font-family: 'Roboto', sans-serif;
+}
+
+h1, h2, h3,  {
+  font-family: "Google Sans Code", monospace;
+}
+
+/* Header gradient */
+.header-gradient {
+  background: linear-gradient(135deg, #220070 0%, #72006c 100%) !important;
+}
+
+/* Cards con sombra suave */
+.v-card {
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+}
+
+.v-card:hover {
+  box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+  transform: translateY(-2px);
+}
+
+/* Botones con mejor apariencia */
+.v-btn {
+  border-radius: 6px;
+  text-transform: none;
+  font-weight: 500;
+}
+
+/* Mejorar campos de formulario */
+.v-text-field .v-field {
+  border-radius: 6px;
+}
+
+
+
+/* Responsive básico */
+@media (max-width: 600px) {
+  .v-container {
+    padding: 8px;
+  }
+  
+  .v-card {
+    margin: 4px;
+  }
+}
