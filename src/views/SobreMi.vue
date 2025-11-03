@@ -52,7 +52,7 @@ const goToRegister = () => {
         <v-row align="center" justify="center" class="fill-height">
             <v-col cols="12" class="text-center">
                 <v-avatar size="120" class="mb-4">
-                    <v-img src="/public/my2.jpg" alt="Mi foto"></v-img>
+                    <v-img src="/my2.jpg" alt="Mi foto"></v-img>
                 </v-avatar>
                 <h1 class="text-h3 font-weight-bold text-white mb-4">
                     Bienvenidos a DG Studio Academy <br>Cosmetología Online
@@ -98,7 +98,7 @@ const goToRegister = () => {
                                             <v-card class="platform-main-card pa-6" elevation="4">
                                                 <v-row align="center" class="h-100">
                                                     <v-col cols="12" lg="6" md="6">
-                                                        <v-img src="/public/golden.png" alt="Cosmetología" height="400"
+                                                        <v-img src="/golden.png" alt="Cosmetología" height="400"
                                                             cover class="rounded-lg platform-image"></v-img>
                                                     </v-col>
                                                     <v-col cols="12" lg="6" md="6">
@@ -236,7 +236,7 @@ const goToRegister = () => {
                                     </v-col>
                                     <v-col cols="12" md="4" class="text-center">
                                         <v-avatar size="120" class="mb-4">
-                                            <v-img src="/public/my.jpg" alt="Mi foto"></v-img>
+                                            <v-img src="/my.jpg" alt="Mi foto"></v-img>
                                         </v-avatar>
                                         <p class="text-caption font-italic">
                                             Cosmetóloga & Micropigmentadora

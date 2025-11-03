@@ -133,7 +133,7 @@ const goToEdit = (cursoId) => {
                 <!-- Header del panel -->
                 <v-row class="mb-4">
                     <v-col cols="12" class="text-center">
-                        <h1 class="text-h4 font-weight-bold text-primary mb-2">
+                        <h1 class="text-h4 font-weight-bold text-primary mb-2 mt-5">
                             Panel de Administración
                         </h1>
                         <p class="text-body-1 text-medium-emphasis">
