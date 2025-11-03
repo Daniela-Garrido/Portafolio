@@ -259,9 +259,8 @@ const goToRegister = () => {
             <v-divider class="my-2" thickness="2" width="100" color="white"></v-divider>
             <div class="text-body-2 font-weight-regular text-white px-4 mb-4"
                 style="max-width: 800px; line-height: 1.6;">
-                DG Studio Academy es tu centro de apoyo integral para cosmetólogas profesionales.
-                Únete a nuestra comunidad de profesionales
-                comprometidas con la excelencia en la cosmetología.
+                DG Studio Academy es tu centro de apoyo integral para cosmetólogas y profesionales de la belleza.
+                Únete a nuestra comunidad de profesionales comprometidas con la excelencia en la cosmetología y la atención.
             </div>
             <v-divider class="mb-4" color="white" thickness="1"></v-divider>
             <div class="text-caption font-weight-regular text-white">
@@ -269,7 +268,7 @@ const goToRegister = () => {
                 <span class="opacity-80">Tu aliada en el mundo de la belleza profesional</span>
             </div>
             <div class="text-caption font-weight-regular text-white opacity-60 mt-2">
-                Desarrollado con ❤️ para cosmetólogas profesionales
+                Desarrollado con ❤️ para cosmetólogas.
             </div>
         </v-footer>
     </v-app>
