@@ -35,61 +35,37 @@ const handleLogin = async () => {
   <v-container class="fill-height" fluid>
     <v-row align="center" justify="center">
       <v-col cols="12" sm="8" md="6" lg="4">
-        
+
         <!-- Card del formulario -->
-        <v-card
-          class="mx-auto pa-8 pb-6"
-          elevation="8"
-          rounded="lg"
-        >
-        <!-- Logo/Header -->
-        <div class="text-center mb-8">
-          <img src="/public//b.svg" alt="" style="width: 60px;" />
-          <h1 class="text-h4 font-weight-bold text-primary mb-2">
-            DG Studio Academy
-          </h1>
-          <p class="text-medium-emphasis">
-            Inicia sesión para continuar
-          </p>
-        </div>
+        <v-card class="mx-auto pa-8 pb-6" elevation="8" rounded="lg">
+          <!-- Logo/Header -->
+          <div class="text-center mb-8">
+            <img src="/public//b.svg" alt="" style="width: 60px;" />
+            <h1 class="text-h4 font-weight-bold text-primary mb-2">
+              DG Studio Academy
+            </h1>
+            <p class="text-medium-emphasis">
+              Inicia sesión para continuar
+            </p>
+          </div>
           <v-form @submit.prevent="handleLogin">
             <!-- Email -->
             <div class="text-subtitle-1 text-medium-emphasis mb-2">Correo electrónico</div>
-            <v-text-field
-              v-model="email"
-              density="compact"
-              placeholder="usuario@ejemplo.com"
-              prepend-inner-icon="mdi-email-outline"
-              variant="outlined"
-              type="email"
-              required
-              autocomplete="email"
-            ></v-text-field>
+            <v-text-field v-model="email" density="compact" placeholder="usuario@ejemplo.com"
+              prepend-inner-icon="mdi-email-outline" variant="outlined" type="email" required
+              autocomplete="email"></v-text-field>
 
             <!-- Contraseña -->
             <div class="text-subtitle-1 text-medium-emphasis d-flex align-center justify-space-between mb-2">
               Contraseña
             </div>
-            <v-text-field
-              v-model="password"
-              :append-inner-icon="visible ? 'mdi-eye-off' : 'mdi-eye'"
-              :type="visible ? 'text' : 'password'"
-              density="compact"
-              placeholder="••••••••"
-              prepend-inner-icon="mdi-lock-outline"
-              variant="outlined"
-              required
-              autocomplete="current-password"
-              @click:append-inner="visible = !visible"
-            ></v-text-field>
+            <v-text-field v-model="password" :append-inner-icon="visible ? 'mdi-eye-off' : 'mdi-eye'"
+              :type="visible ? 'text' : 'password'" density="compact" placeholder="••••••••"
+              prepend-inner-icon="mdi-lock-outline" variant="outlined" required autocomplete="current-password"
+              @click:append-inner="visible = !visible"></v-text-field>
 
             <!-- Error Alert -->
-            <v-alert
-              v-if="error"
-              type="error"
-              variant="tonal"
-              class="mb-4"
-            >
+            <v-alert v-if="error" type="error" variant="tonal" class="mb-4">
               <div class="d-flex align-center">
                 <v-icon icon="mdi-alert-circle-outline" class="me-2"></v-icon>
                 <span>{{ error }}</span>
@@ -97,23 +73,10 @@ const handleLogin = async () => {
             </v-alert>
 
             <!-- Botón Login -->
-            <v-btn
-              type="submit"
-              color="primary"
-              size="large"
-              variant="flat"
-              block
-              class="mb-4"
-              :loading="loading"
-              :disabled="loading"
-            >
+            <v-btn type="submit" color="primary" size="large" variant="flat" block class="mb-4" :loading="loading"
+              :disabled="loading">
               <template v-slot:loader>
-                <v-progress-circular
-                  indeterminate
-                  size="20"
-                  width="2"
-                  class="me-2"
-                ></v-progress-circular>
+                <v-progress-circular indeterminate size="20" width="2" class="me-2"></v-progress-circular>
                 Iniciando sesión...
               </template>
               <v-icon icon="mdi-login" start></v-icon>
@@ -124,10 +87,7 @@ const handleLogin = async () => {
             <v-card-text class="text-center pt-0">
               <span class="text-medium-emphasis">
                 ¿No tienes cuenta?
-                <router-link 
-                  to="/register" 
-                  class="text-primary text-decoration-none font-weight-bold"
-                >
+                <router-link to="/register" class="text-primary text-decoration-none font-weight-bold">
                   Regístrate aquí
                 </router-link>
               </span>
@@ -161,7 +121,7 @@ const handleLogin = async () => {
     margin: 1rem;
     padding: 1.5rem !important;
   }
-  
+
   .text-h4 {
     font-size: 1.5rem !important;
   }

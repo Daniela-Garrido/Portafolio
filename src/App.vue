@@ -9,11 +9,11 @@ const authStore = useAuthStore();
 const router = useRouter();
 
 // Extraemos la ref reactiva 'isAuthReady'
-const { isAuthReady } = storeToRefs(authStore); 
+const { isAuthReady } = storeToRefs(authStore);
 
 onMounted(() => {
-    // Inicializa el listener de Firebase Auth
-    authStore.initAuth();
+  // Inicializa el listener de Firebase Auth
+  authStore.initAuth();
 });
 
 // // El requisito pide usar onAuthStateChanged para notificar el ingreso.
@@ -28,7 +28,7 @@ onMounted(() => {
 </script>
 
 <template>
-   <router-view v-if="isAuthReady" />
+  <router-view v-if="isAuthReady" />
 
   <div v-else class="min-vh-100 d-flex align-items-center justify-content-center bg-light">
     <div class="text-center">
@@ -39,9 +39,7 @@ onMounted(() => {
     </div>
   </div>
   <AppToast />
-  
+
 </template>
 
-<style scoped>
-
-</style>
+<style scoped></style>

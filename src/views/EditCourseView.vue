@@ -28,13 +28,13 @@ const courseId = route.params.id;
 // Computed para validar si el formulario es válido
 const isFormValid = computed(() => {
   if (!courseData.value) return false;
-  return courseData.value.codigo && 
-         courseData.value.nombre && 
-         courseData.value.precio >= 0 && 
-         courseData.value.duracion && 
-         courseData.value.descripcion && 
-         courseData.value.img && 
-         courseData.value.estado !== null;
+  return courseData.value.codigo &&
+    courseData.value.nombre &&
+    courseData.value.precio >= 0 &&
+    courseData.value.duracion &&
+    courseData.value.descripcion &&
+    courseData.value.img &&
+    courseData.value.estado !== null;
 });
 
 onMounted(() => {
@@ -134,19 +134,14 @@ const goBack = () => {
 <template>
   <v-app>
     <Header :user-name="userNameDisplay" @logout="handleLogout" />
-    
+
     <v-main>
       <v-container class="edit-view-wrapper" fluid>
         <v-row justify="center">
           <v-col cols="12" md="8" lg="6" xl="5">
             <!-- Header más compacto -->
             <div class="text-center mb-4">
-              <v-icon 
-                icon="mdi-pencil" 
-                size="48" 
-                color="primary" 
-                class="mb-2"
-              ></v-icon>
+              <v-icon icon="mdi-pencil" size="48" color="primary" class="mb-2"></v-icon>
               <h1 class="text-h4 font-weight-bold text-primary mb-2">
                 Editar Curso
               </h1>
@@ -157,25 +152,14 @@ const goBack = () => {
 
             <!-- Estado de Carga más compacto -->
             <v-card v-if="isLoadingData || courseData === null" class="text-center pa-6 mb-4">
-              <v-progress-circular
-                indeterminate
-                color="primary"
-                size="48"
-                width="3"
-                class="mb-3"
-              ></v-progress-circular>
+              <v-progress-circular indeterminate color="primary" size="48" width="3" class="mb-3"></v-progress-circular>
               <p class="text-body-2 text-medium-emphasis">
                 Cargando datos del curso...
               </p>
             </v-card>
 
             <!-- Formulario de Edición más compacto -->
-            <v-card
-              v-else
-              class="mx-auto"
-              elevation="4"
-              rounded="lg"
-            >
+            <v-card v-else class="mx-auto" elevation="4" rounded="lg">
               <!-- Header de la card más compacto -->
               <v-toolbar color="grey-darken-3" density="compact">
                 <v-toolbar-title class="text-white text-subtitle-1 font-weight-bold">
@@ -189,50 +173,25 @@ const goBack = () => {
                   <v-row>
                     <!-- Código -->
                     <v-col cols="12" md="6">
-                      <v-text-field
-                        v-model="courseData.codigo"
-                        label="Código *"
-                        variant="outlined"
-                        density="compact"
-                        required
-                        :rules="[v => !!v || 'El código es requerido']"
-                      ></v-text-field>
+                      <v-text-field v-model="courseData.codigo" label="Código *" variant="outlined" density="compact"
+                        required :rules="[v => !!v || 'El código es requerido']"></v-text-field>
                     </v-col>
 
                     <!-- Nombre -->
                     <v-col cols="12" md="6">
-                      <v-text-field
-                        v-model="courseData.nombre"
-                        label="Nombre *"
-                        variant="outlined"
-                        density="compact"
-                        required
-                        :rules="[v => !!v || 'El nombre es requerido']"
-                      ></v-text-field>
+                      <v-text-field v-model="courseData.nombre" label="Nombre *" variant="outlined" density="compact"
+                        required :rules="[v => !!v || 'El nombre es requerido']"></v-text-field>
                     </v-col>
 
                     <!-- URL de Imagen -->
                     <v-col cols="12">
-                      <v-text-field
-                        v-model="courseData.img"
-                        label="URL de la Imagen del Curso *"
-                        placeholder="https://..."
-                        variant="outlined"
-                        density="compact"
-                        type="url"
-                        required
-                        :rules="[v => !!v || 'La URL de la imagen es requerida']"
-                      ></v-text-field>
-                      
+                      <v-text-field v-model="courseData.img" label="URL de la Imagen del Curso *"
+                        placeholder="https://..." variant="outlined" density="compact" type="url" required
+                        :rules="[v => !!v || 'La URL de la imagen es requerida']"></v-text-field>
+
                       <!-- Vista previa de imagen más pequeña -->
                       <div class="mt-2 text-center" v-if="courseData.img">
-                        <v-img
-                          :src="courseData.img"
-                          alt="Vista previa"
-                          max-height="80"
-                          contain
-                          class="rounded"
-                        ></v-img>
+                        <v-img :src="courseData.img" alt="Vista previa" max-height="80" contain class="rounded"></v-img>
                         <p class="text-caption text-medium-emphasis mt-1">
                           Vista previa de la imagen
                         </p>
@@ -241,65 +200,32 @@ const goBack = () => {
 
                     <!-- Duración -->
                     <v-col cols="12" md="6">
-                      <v-text-field
-                        v-model="courseData.duracion"
-                        label="Duración *"
-                        variant="outlined"
-                        density="compact"
-                        required
-                        :rules="[v => !!v || 'La duración es requerida']"
-                      ></v-text-field>
+                      <v-text-field v-model="courseData.duracion" label="Duración *" variant="outlined"
+                        density="compact" required :rules="[v => !!v || 'La duración es requerida']"></v-text-field>
                     </v-col>
 
                     <!-- Precio -->
                     <v-col cols="12" md="6">
-                      <v-text-field
-                        v-model.number="courseData.precio"
-                        label="Costo ($) *"
-                        variant="outlined"
-                        density="compact"
-                        type="number"
-                        min="0"
-                        required
-                        :rules="[
+                      <v-text-field v-model.number="courseData.precio" label="Costo ($) *" variant="outlined"
+                        density="compact" type="number" min="0" required :rules="[
                           v => v >= 0 || 'El precio debe ser mayor o igual a 0',
                           v => !!v || 'El precio es requerido'
-                        ]"
-                      ></v-text-field>
+                        ]"></v-text-field>
                     </v-col>
 
                     <!-- Descripción -->
                     <v-col cols="12">
-                      <v-textarea
-                        v-model="courseData.descripcion"
-                        label="Descripción *"
-                        variant="outlined"
-                        density="compact"
-                        rows="3"
-                        required
-                        :rules="[v => !!v || 'La descripción es requerida']"
-                      ></v-textarea>
+                      <v-textarea v-model="courseData.descripcion" label="Descripción *" variant="outlined"
+                        density="compact" rows="3" required
+                        :rules="[v => !!v || 'La descripción es requerida']"></v-textarea>
                     </v-col>
 
                     <!-- Estado del Curso -->
                     <v-col cols="12">
-                      <v-radio-group 
-                        v-model="courseData.estado" 
-                        label="Estado del Curso *"
-                        :rules="[v => v !== null || 'El estado es requerido']"
-                        required
-                        density="compact"
-                      >
-                        <v-radio
-                          label="Curso Activo / Disponible"
-                          :value="true"
-                          color="success"
-                        ></v-radio>
-                        <v-radio
-                          label="Curso Cerrado / No disponible"
-                          :value="false"
-                          color="error"
-                        ></v-radio>
+                      <v-radio-group v-model="courseData.estado" label="Estado del Curso *"
+                        :rules="[v => v !== null || 'El estado es requerido']" required density="compact">
+                        <v-radio label="Curso Activo / Disponible" :value="true" color="success"></v-radio>
+                        <v-radio label="Curso Cerrado / No disponible" :value="false" color="error"></v-radio>
                       </v-radio-group>
                     </v-col>
                   </v-row>
@@ -307,24 +233,12 @@ const goBack = () => {
 
                 <!-- Botones de Acción más compactos -->
                 <v-card-actions class="pa-3">
-                  <v-btn
-                    color="secondary"
-                    variant="text"
-                    @click="goBack"
-                    size="small"
-                    class="me-2"
-                  >
+                  <v-btn color="secondary" variant="text" @click="goBack" size="small" class="me-2">
                     <v-icon icon="mdi-arrow-left" start size="18"></v-icon>
                     Volver
                   </v-btn>
                   <v-spacer></v-spacer>
-                  <v-btn
-                    type="submit"
-                    color="success"
-                    variant="flat"
-                    size="small"
-                    :disabled="!isFormValid"
-                  >
+                  <v-btn type="submit" color="success" variant="flat" size="small" :disabled="!isFormValid">
                     <v-icon icon="mdi-content-save" start size="18"></v-icon>
                     Guardar Cambios
                   </v-btn>
@@ -335,35 +249,21 @@ const goBack = () => {
         </v-row>
 
         <!-- MODAL DE CONFIRMACIÓN más compacto -->
-        <v-dialog
-          v-model="isConfirmModalOpen"
-          max-width="400"
-          persistent
-        >
+        <v-dialog v-model="isConfirmModalOpen" max-width="400" persistent>
           <v-card>
             <v-card-title class="text-h6 pa-4">
               Confirmar actualización
             </v-card-title>
             <v-card-text class="pa-4">
-              <p class="text-body-2">¿Deseas guardar los cambios en el curso <strong>{{ pendingUpdate?.nombre }}</strong>?</p>
+              <p class="text-body-2">¿Deseas guardar los cambios en el curso <strong>{{ pendingUpdate?.nombre
+                  }}</strong>?</p>
             </v-card-text>
             <v-card-actions class="pa-3">
               <v-spacer></v-spacer>
-              <v-btn
-                color="secondary"
-                variant="text"
-                @click="closeConfirmModal"
-                size="small"
-                class="me-2"
-              >
+              <v-btn color="secondary" variant="text" @click="closeConfirmModal" size="small" class="me-2">
                 Cancelar
               </v-btn>
-              <v-btn
-                color="success"
-                variant="flat"
-                @click="confirmUpdateCourse"
-                size="small"
-              >
+              <v-btn color="success" variant="flat" @click="confirmUpdateCourse" size="small">
                 Guardar
               </v-btn>
             </v-card-actions>
@@ -399,7 +299,8 @@ const goBack = () => {
 }
 
 /* Mejorar la apariencia de los campos */
-.v-text-field, .v-textarea {
+.v-text-field,
+.v-textarea {
   margin-bottom: 4px;
 }
 
@@ -408,11 +309,11 @@ const goBack = () => {
   .edit-view-wrapper {
     padding: 0.25rem;
   }
-  
+
   .text-h4 {
     font-size: 1.5rem !important;
   }
-  
+
   .v-card {
     margin: 0.25rem;
   }
@@ -463,12 +364,14 @@ const goBack = () => {
 
 /* Ajustar el espaciado superior para el header */
 .v-main {
-  margin-top: 64px; /* Altura del header */
+  margin-top: 64px;
+  /* Altura del header */
 }
 
 @media (max-width: 600px) {
   .v-main {
-    margin-top: 56px; /* Altura del header en móviles */
+    margin-top: 56px;
+    /* Altura del header en móviles */
   }
 }
 </style>

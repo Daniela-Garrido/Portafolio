@@ -127,7 +127,7 @@ const goToEdit = (cursoId) => {
 <template>
     <v-app>
         <Header :user-name="userNameDisplay" @logout="handleLogout" />
-        
+
         <v-main>
             <v-container class="admin-view-wrapper" fluid>
                 <!-- Header del panel -->
@@ -145,14 +145,8 @@ const goToEdit = (cursoId) => {
                 <!-- Botón agregar curso - Siempre visible -->
                 <v-row class="mb-4">
                     <v-col cols="12" md="6" lg="4" class="mx-auto">
-                        <v-btn 
-                            @click="openAddModal" 
-                            color="indigo-darken-3" 
-                            variant="flat"
-                            size="large"
-                            block
-                            class="mb-4"
-                        >
+                        <v-btn @click="openAddModal" color="indigo-darken-3" variant="flat" size="large" block
+                            class="mb-4">
                             <v-icon icon="mdi-plus-circle" start></v-icon>
                             Agregar Nuevo Curso
                         </v-btn>
@@ -161,23 +155,13 @@ const goToEdit = (cursoId) => {
 
                 <!-- Estado de carga -->
                 <v-card v-if="loadingCourses" class="text-center pa-6 mb-4">
-                    <v-progress-circular
-                        indeterminate
-                        color="primary"
-                        size="48"
-                        class="mb-3"
-                    ></v-progress-circular>
+                    <v-progress-circular indeterminate color="primary" size="48" class="mb-3"></v-progress-circular>
                     <p class="text-body-1 text-medium-emphasis">Cargando cursos...</p>
                 </v-card>
 
                 <!-- Estado vacío -->
                 <v-card v-else-if="cursosDisponibles.length === 0" class="text-center pa-8 mb-4">
-                    <v-icon
-                        icon="mdi-information-outline"
-                        size="64"
-                        color="grey"
-                        class="mb-3"
-                    ></v-icon>
+                    <v-icon icon="mdi-information-outline" size="64" color="grey" class="mb-3"></v-icon>
                     <p class="text-h6 text-medium-emphasis mb-2">No hay cursos registrados</p>
                     <p class="text-body-2 text-medium-emphasis">
                         Comienza agregando tu primer curso
@@ -200,10 +184,7 @@ const goToEdit = (cursoId) => {
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr
-                                        v-for="curso in cursosDisponibles"
-                                        :key="curso.id"
-                                    >
+                                    <tr v-for="curso in cursosDisponibles" :key="curso.id">
                                         <td class="font-weight-medium">{{ curso.codigo }}</td>
                                         <td>
                                             <div class="d-flex align-center">
@@ -217,31 +198,19 @@ const goToEdit = (cursoId) => {
                                             ${{ curso.precio.toLocaleString('es-CL') }}
                                         </td>
                                         <td>
-                                            <v-chip
-                                                :color="curso.estado ? 'success' : 'error'"
-                                                variant="flat"
-                                                size="small"
-                                            >
+                                            <v-chip :color="curso.estado ? 'success' : 'error'" variant="flat"
+                                                size="small">
                                                 {{ curso.estado ? 'Activo' : 'Cerrado' }}
                                             </v-chip>
                                         </td>
                                         <td>
                                             <div class="d-flex justify-center">
-                                                <v-btn
-                                                    @click="goToEdit(curso.id)"
-                                                    color="info"
-                                                    variant="text"
-                                                    size="small"
-                                                    class="me-2"
-                                                >
+                                                <v-btn @click="goToEdit(curso.id)" color="info" variant="text"
+                                                    size="small" class="me-2">
                                                     <v-icon icon="mdi-pencil" size="18"></v-icon>
                                                 </v-btn>
-                                                <v-btn
-                                                    @click="openDeleteModal(curso.id, curso.nombre)"
-                                                    color="error"
-                                                    variant="text"
-                                                    size="small"
-                                                >
+                                                <v-btn @click="openDeleteModal(curso.id, curso.nombre)" color="error"
+                                                    variant="text" size="small">
                                                     <v-icon icon="mdi-delete" size="18"></v-icon>
                                                 </v-btn>
                                             </div>
@@ -255,12 +224,7 @@ const goToEdit = (cursoId) => {
                     <!-- Vista de cards para móviles -->
                     <div class="d-md-none">
                         <v-row>
-                            <v-col
-                                v-for="curso in cursosDisponibles"
-                                :key="curso.id"
-                                cols="12"
-                                class="mb-3"
-                            >
+                            <v-col v-for="curso in cursosDisponibles" :key="curso.id" cols="12" class="mb-3">
                                 <v-card elevation="2" rounded="lg">
                                     <v-card-item>
                                         <div class="d-flex align-start justify-space-between mb-2">
@@ -277,11 +241,8 @@ const goToEdit = (cursoId) => {
                                                     </v-card-subtitle>
                                                 </div>
                                             </div>
-                                            <v-chip
-                                                :color="curso.estado ? 'success' : 'error'"
-                                                variant="flat"
-                                                size="small"
-                                            >
+                                            <v-chip :color="curso.estado ? 'success' : 'error'" variant="flat"
+                                                size="small">
                                                 {{ curso.estado ? 'Activo' : 'Cerrado' }}
                                             </v-chip>
                                         </div>
@@ -303,23 +264,13 @@ const goToEdit = (cursoId) => {
                                     </v-card-text>
 
                                     <v-card-actions class="px-4 pb-4">
-                                        <v-btn
-                                            @click="goToEdit(curso.id)"
-                                            color="info"
-                                            variant="flat"
-                                            size="small"
-                                            class="flex-grow-1 me-2"
-                                        >
+                                        <v-btn @click="goToEdit(curso.id)" color="info" variant="flat" size="small"
+                                            class="flex-grow-1 me-2">
                                             <v-icon icon="mdi-pencil" start size="18"></v-icon>
                                             Editar
                                         </v-btn>
-                                        <v-btn
-                                            @click="openDeleteModal(curso.id, curso.nombre)"
-                                            color="error"
-                                            variant="outlined"
-                                            size="small"
-                                            class="flex-grow-1"
-                                        >
+                                        <v-btn @click="openDeleteModal(curso.id, curso.nombre)" color="error"
+                                            variant="outlined" size="small" class="flex-grow-1">
                                             <v-icon icon="mdi-delete" start size="18"></v-icon>
                                             Eliminar
                                         </v-btn>
@@ -334,11 +285,7 @@ const goToEdit = (cursoId) => {
                 <CourseModal :show="isModalOpen" @close="closeModal" @save="handleSaveCourse" />
 
                 <!-- Modal de confirmación para agregar curso -->
-                <v-dialog
-                    v-model="isConfirmAddModalOpen"
-                    max-width="400"
-                    persistent
-                >
+                <v-dialog v-model="isConfirmAddModalOpen" max-width="400" persistent>
                     <v-card>
                         <v-card-title class="text-h6">
                             Confirmar agregado
@@ -348,18 +295,10 @@ const goToEdit = (cursoId) => {
                         </v-card-text>
                         <v-card-actions>
                             <v-spacer></v-spacer>
-                            <v-btn
-                                color="secondary"
-                                variant="text"
-                                @click="cancelAddCourse"
-                            >
+                            <v-btn color="secondary" variant="text" @click="cancelAddCourse">
                                 Cancelar
                             </v-btn>
-                            <v-btn
-                                color="success"
-                                variant="flat"
-                                @click="confirmAddCourse"
-                            >
+                            <v-btn color="success" variant="flat" @click="confirmAddCourse">
                                 Agregar Curso
                             </v-btn>
                         </v-card-actions>
@@ -367,35 +306,24 @@ const goToEdit = (cursoId) => {
                 </v-dialog>
 
                 <!-- Modal de confirmación de eliminar curso -->
-                <v-dialog
-                    v-model="isConfirmDeleteModalOpen"
-                    max-width="400"
-                    persistent
-                >
+                <v-dialog v-model="isConfirmDeleteModalOpen" max-width="400" persistent>
                     <v-card>
                         <v-card-title class="text-h6">
                             Confirmar eliminación
                         </v-card-title>
                         <v-card-text class="pt-4">
-                            <p>¿Estás seguro de que quieres ELIMINAR el curso <strong>{{ pendingDeleteCourse?.nombre }}</strong>?</p>
+                            <p>¿Estás seguro de que quieres ELIMINAR el curso <strong>{{ pendingDeleteCourse?.nombre
+                                    }}</strong>?</p>
                             <p class="text-caption text-error mt-2">
                                 Esta acción no se puede deshacer.
                             </p>
                         </v-card-text>
                         <v-card-actions>
                             <v-spacer></v-spacer>
-                            <v-btn
-                                color="secondary"
-                                variant="text"
-                                @click="cancelDeleteCourse"
-                            >
+                            <v-btn color="secondary" variant="text" @click="cancelDeleteCourse">
                                 Cancelar
                             </v-btn>
-                            <v-btn
-                                color="error"
-                                variant="flat"
-                                @click="confirmDeleteCourse"
-                            >
+                            <v-btn color="error" variant="flat" @click="confirmDeleteCourse">
                                 Sí, borrar
                             </v-btn>
                         </v-card-actions>
@@ -435,11 +363,11 @@ const goToEdit = (cursoId) => {
     .admin-view-wrapper {
         padding: 0.25rem;
     }
-    
+
     .v-card-title {
         font-size: 1rem !important;
     }
-    
+
     .v-btn {
         font-size: 0.75rem;
     }
@@ -459,7 +387,7 @@ const goToEdit = (cursoId) => {
     .text-h4 {
         font-size: 1.5rem !important;
     }
-    
+
     .v-card {
         margin: 0.25rem;
     }
@@ -492,7 +420,7 @@ const goToEdit = (cursoId) => {
         flex-direction: column;
         gap: 0.5rem;
     }
-    
+
     .v-card-actions .v-btn {
         width: 100%;
     }

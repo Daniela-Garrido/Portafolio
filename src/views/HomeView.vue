@@ -240,7 +240,7 @@ onUnmounted(() => {
   .home-view-wrapper {
     padding: 0.5rem;
   }
-  
+
   .v-col {
     padding: 0.5rem;
   }
@@ -264,11 +264,11 @@ onUnmounted(() => {
   .text-h3 {
     font-size: 1.75rem !important;
   }
-  
+
   .text-h6 {
     font-size: 1rem !important;
   }
-  
+
   .pa-6 {
     padding: 2rem 1rem !important;
   }
@@ -278,7 +278,7 @@ onUnmounted(() => {
   .v-dialog {
     margin: 8px;
   }
-  
+
   .full-description {
     padding: 8px;
   }

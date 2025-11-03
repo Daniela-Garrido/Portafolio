@@ -1,4 +1,3 @@
-
 <script setup>
 import { computed } from 'vue';
 import { useRouter, useRoute } from 'vue-router';
@@ -61,25 +60,8 @@ const handleLogout = async () => {
             <div class="d-flex align-center" style="gap: 8px">
                 <!-- Si NO está autenticado -->
                 <template v-if="!isAuthenticated">
-                    <!-- Botón Inicio (Sobre Mi) -->
-                    <v-btn 
-                        @click="goToSobreMi"
-                        color="white" 
-                        variant="text"
-                        size="small"
-                        class="d-none d-md-flex"
-                    >
-                        <v-icon icon="mdi-home" start></v-icon>
-                        Inicio
-                    </v-btn>
-
                     <!-- Botón Ingresar -->
-                    <v-btn 
-                        @click="goToLogin"
-                        color="white" 
-                        variant="outlined"
-                        size="small"
-                    >
+                    <v-btn @click="goToLogin" color="white" variant="outlined" size="small">
                         <v-icon icon="mdi-login" start class="d-none d-sm-inline"></v-icon>
                         <span class="d-none d-sm-inline">Ingresar</span>
                         <v-icon icon="mdi-login" class="d-sm-none"></v-icon>
@@ -89,27 +71,15 @@ const handleLogout = async () => {
                 <!-- Si ESTÁ autenticado -->
                 <template v-else>
                     <!-- Navegación para Admin -->
-                    <v-btn 
-                        v-if="isAdmin && isInAdminView" 
-                        @click="goToHome"
-                        color="info" 
-                        variant="flat"
-                        size="small"
-                        class="d-none d-md-flex"
-                    >
+                    <v-btn v-if="isAdmin && isInAdminView" @click="goToHome" color="info" variant="flat" size="small"
+                        class="d-none d-md-flex">
                         <v-icon icon="mdi-eye" start></v-icon>
                         <span class="d-none d-lg-inline">Home</span>
                         <span class="d-lg-none">Home</span>
                     </v-btn>
 
-                    <v-btn 
-                        v-if="isAdmin && !isInAdminView" 
-                        @click="goToAdmin"
-                        color="warning" 
-                        variant="flat"
-                        size="small"
-                        class="d-none d-md-flex"
-                    >
+                    <v-btn v-if="isAdmin && !isInAdminView" @click="goToAdmin" color="warning" variant="flat"
+                        size="small" class="d-none d-md-flex">
                         <v-icon icon="mdi-cog" start></v-icon>
                         <span class="d-none d-lg-inline">Admin</span>
                         <span class="d-lg-none">Admin</span>
@@ -121,37 +91,18 @@ const handleLogout = async () => {
                     </span>
 
                     <!-- Botones para móvil (solo íconos) -->
-                    <v-btn 
-                        v-if="isAdmin && isInAdminView" 
-                        @click="goToHome"
-                        color="info" 
-                        variant="text"
-                        size="small"
-                        icon
-                        class="d-md-none"
-                    >
+                    <v-btn v-if="isAdmin && isInAdminView" @click="goToHome" color="info" variant="text" size="small"
+                        icon class="d-md-none">
                         <v-icon icon="mdi-eye"></v-icon>
                     </v-btn>
 
-                    <v-btn 
-                        v-if="isAdmin && !isInAdminView" 
-                        @click="goToAdmin"
-                        color="warning" 
-                        variant="text"
-                        size="small"
-                        icon
-                        class="d-md-none"
-                    >
+                    <v-btn v-if="isAdmin && !isInAdminView" @click="goToAdmin" color="warning" variant="text"
+                        size="small" icon class="d-md-none">
                         <v-icon icon="mdi-cog"></v-icon>
                     </v-btn>
 
                     <!-- Botón de cerrar sesión -->
-                    <v-btn 
-                        @click="handleLogout" 
-                        color="error" 
-                        variant="flat"
-                        size="small"
-                    >
+                    <v-btn @click="handleLogout" color="error" variant="flat" size="small">
                         <v-icon icon="mdi-logout" start class="d-none d-sm-inline"></v-icon>
                         <span class="d-none d-sm-inline">Salir</span>
                         <v-icon icon="mdi-logout" class="d-sm-none"></v-icon>
@@ -163,7 +114,6 @@ const handleLogout = async () => {
 </template>
 
 <style scoped>
-
 .v-btn {
     min-height: 40px;
 }
@@ -173,7 +123,7 @@ const handleLogout = async () => {
     .v-app-bar-title {
         font-size: 1rem !important;
     }
-    
+
     .v-btn {
         min-width: auto !important;
     }

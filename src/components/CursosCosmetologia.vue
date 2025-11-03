@@ -148,8 +148,8 @@ const getLearningItems = (courseId) => {
                             </v-card-text>
 
                             <v-card-actions class="px-4 pb-4">
-                                <v-btn class="header-gradient" color="secondary" variant="flat" size="small" @click="openCourseDetails(course)"
-                                    block>
+                                <v-btn class="header-gradient" color="secondary" variant="flat" size="small"
+                                    @click="openCourseDetails(course)" block>
                                     <v-icon icon="mdi-information" start size="18"></v-icon>
                                     Ver Más
                                 </v-btn>
