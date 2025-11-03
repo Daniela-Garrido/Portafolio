@@ -183,7 +183,7 @@ service cloud.firestore {
 
 ---
 
-## 🚀 Despliegue y Optimización (TL)
+## 🚀 Despliegue y Optimización
 
 ### Proceso de Despliegue
 ```bash
