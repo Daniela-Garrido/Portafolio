@@ -148,11 +148,10 @@ En el video técnico se explica:
 * ➕ CRUD de cursos (Crear, Leer, Actualizar, Eliminar)
 * 🖼 Gestión de imágenes y contenido
 * 📈 Control de estado de cursos (Activo/Inactivo)
-#### Credenciales de administrador
-
+#### Credenciales de administrador para Admin 
   ```
-  correo: hola@groman.cl
-  contraseña: 123xmi
+  correo: dani@gmail.com
+  contraseña: 123456
   ```
 ---
 
