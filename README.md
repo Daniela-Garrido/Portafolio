@@ -13,9 +13,9 @@
 
 **Importante:** Solo usuarios autenticados con rol de administrador pueden realizar operaciones CRUD en los cursos.
 
-**Credenciales de Prueba:**  
-📧 **Correo:** `admin@dgstudio.com`  
-🔑 **Contraseña:** `admin123`
+**Credenciales de Prueba para ingresar al panel de administrador:**  
+📧 **Correo:** `dani@gmail.com`  
+🔑 **Contraseña:** `123456`
 
 ## 🌐 Demo en Vivo
 **URL del Proyecto:** [https://dg-studio-academy.web.app](https://dg-studio-academy.web.app)
